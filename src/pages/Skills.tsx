@@ -1,5 +1,5 @@
 // src/pages/Skills.tsx
-import React from "react";
+// import React from "react";
 import { motion } from "framer-motion";
 
 // Skill categories based on your CV
@@ -43,7 +43,7 @@ const itemVariants= {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 100,
     },
   },

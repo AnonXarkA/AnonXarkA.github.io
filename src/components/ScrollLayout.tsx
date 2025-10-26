@@ -1,6 +1,6 @@
 // src/components/ScrollLayout.tsx
 
-import React, { useState, useEffect, useRef } from "react";
+import  { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 // --- CORRECTED IMPORTS ---
 import { Header } from "./Header.tsx";
@@ -273,7 +273,8 @@ useEffect(() => {
             >
               {/* This inner div allows scrolling *within* a page if the content is too long */}
               <div
-              ref={el => sectionContentRefs.current[index] = el}
+              // ref={el => sectionContentRefs.current[index] = el}
+              ref={(el) => { sectionContentRefs.current[index] = el; }}
               className="scrollable-content h-full w-full overflow-y-auto overflow-x-hidden p-4 md:p-8 pt-[70px] pb-16 box-border">
                 <Component />
               </div>
