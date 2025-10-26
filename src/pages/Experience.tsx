@@ -1,6 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Briefcase, GraduationCap, Users } from "lucide-react"; // Icons for sections
+// import React from "react";
+import { motion  } from "framer-motion";
+import { Briefcase,  Users } from "lucide-react"; // Icons for sections
 
 // Animation variants
 const containerVariants = {

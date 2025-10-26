@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { MenuIcon, XIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -10,7 +10,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onNavigate, currentSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  // const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,9 +27,11 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentSection }) =>
     { name: "Contact", path: "/contact", index: 7 },
   ];
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
+  // const isActive = (path: string) => {
+  //   return location.pathname === path;
+  // };
+
+  const isActive = (linkIndex: number) => linkIndex === currentSection;
 
   const handleNavClick = (index: number) => {
     onNavigate(index);
@@ -54,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentSection }) =>
             className="relative text-white hover:text-blue-400 transition-colors duration-200 py-2"
           >
             {link.name}
-            {isActive(link.path) && (
+            {isActive(link.index) && (
               <motion.div
                 layoutId="underline"
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400"
@@ -86,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentSection }) =>
                 key={link.name}
                 onClick={() => handleNavClick(link.index)}
                 className={`block w-full text-center py-3 transition-colors duration-200 ${
-                  isActive(link.path)
+                  isActive(link.index)
                     ? "text-blue-400 bg-gray-900"
                     : "text-white hover:text-blue-400 hover:bg-gray-900"
                 }`}

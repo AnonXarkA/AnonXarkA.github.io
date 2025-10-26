@@ -1,5 +1,5 @@
-import React from "react";
-import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+// import React from "react";
+import { Mail, Linkedin, Github} from "lucide-react";
 import { motion } from "framer-motion";
 
 import { SiGooglescholar } from "react-icons/si";

@@ -1,6 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Link, BookOpen, Github, GraduationCap } from "lucide-react"; // Import relevant icons
+// import React from "react";
+import { motion  } from "framer-motion";
+import { Link,  Github, GraduationCap } from "lucide-react"; // Import relevant icons
 
 // Data for publications from your CV
 const publications = [
