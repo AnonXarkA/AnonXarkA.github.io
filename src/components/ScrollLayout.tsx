@@ -36,6 +36,18 @@ export const ScrollLayout = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+
+  useEffect(() => {
+    // Check if the gtag function exists (it should after the script loads)
+    if (typeof window.gtag === 'function') {
+      window.gtag('config', 'G-NE4H7HRMHF', { // Replace with YOUR Measurement ID
+        page_path: location.pathname + location.search,
+        page_title: document.title // Use the current document title
+      });
+      console.log(`GA PageView sent for: ${location.pathname}`); // Optional: for debugging
+    }
+  }, [location]); // Re-run this effect whenever the location changes
+
   useEffect(() => {
     sectionContentRefs.current = sectionContentRefs.current.slice(0, sections.length);
  }, [sections.length]);
